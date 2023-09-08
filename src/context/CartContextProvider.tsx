@@ -1,4 +1,4 @@
-import { ReactNode, useContext, useEffect, useState } from "react";
+import { ReactNode, useCallback, useContext, useEffect, useState } from "react";
 import CartContext from "./CartContext";
 import CartItem from "../models/CartItem";
 import {
@@ -19,9 +19,9 @@ const CartContextProvider = ({ children }: Props) => {
   const { user } = useContext(UserContext);
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  const loadCart = async (): Promise<void> => {
+  const loadCart = useCallback(async () => {
     setCart(await getCart(user?._id!));
-  };
+  }, []);
 
   useEffect(() => {
     (async () => {
