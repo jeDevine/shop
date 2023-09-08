@@ -7,7 +7,7 @@ interface Props {
 }
 
 const UserContextProvider = ({ children }: Props) => {
-  const [user, setUser] = useState<User | null>({
+  const [user] = useState<User | null>({
     _id: "64dcec1b8599d73faf48c1cd",
     displayName: "James",
     darkTheme: true,

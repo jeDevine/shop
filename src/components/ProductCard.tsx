@@ -19,9 +19,9 @@ const ProductCard = ({ product }: Props) => {
       </Link>
       <p>Price: {product.price}</p>
       {product.photoURL ? (
-        <img src={product.photoURL} />
+        <img src={product.photoURL} alt={product.name} />
       ) : (
-        <img src={comingSoon} />
+        <img src={comingSoon} alt="coming soon" />
       )}
       <button onClick={() => addToCartHandler(product)}>Add to cart</button>
     </li>

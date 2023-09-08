@@ -4,7 +4,6 @@ import { useContext, useEffect, useState } from "react";
 import { getProduct } from "../services/productService";
 import Product from "../models/Product";
 import comingSoon from "../images/coming-soon.jpg";
-import ProductCard from "./ProductCard";
 import CartContext from "../context/CartContext";
 
 const ProductDetails = () => {
@@ -28,9 +27,9 @@ const ProductDetails = () => {
           <p>Product: {product.name}</p>
           <p>Price {product.price}</p>
           {product.photoURL ? (
-            <img src={product.photoURL} />
+            <img src={product.photoURL} alt={product.name} />
           ) : (
-            <img src={comingSoon} />
+            <img src={comingSoon} alt="coming soon" />
           )}
           <button onClick={() => addToCartHandler(product)}>Add to cart</button>
         </>

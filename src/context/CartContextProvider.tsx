@@ -29,7 +29,7 @@ const CartContextProvider = ({ children }: Props) => {
         loadCart();
       }
     })();
-  }, [user]);
+  }, [user, loadCart]);
 
   const addToCartHandler = async (product: Product): Promise<void> => {
     await addToCart({ userId: user?._id!, product, quantity: 1 });
