@@ -21,7 +21,7 @@ const CartContextProvider = ({ children }: Props) => {
 
   const loadCart = useCallback(async () => {
     setCart(await getCart(user?._id!));
-  }, []);
+  }, [user?._id]);
 
   useEffect(() => {
     (async () => {
